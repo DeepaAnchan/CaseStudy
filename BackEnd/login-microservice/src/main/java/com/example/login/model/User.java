@@ -33,7 +33,7 @@ public class User {
     private String name;
     private Set<Role> role;
     private Integer active=1;
-    private boolean isLoacked=false;
+    private boolean isLocked=false;
     private boolean isExpired=false;
     private boolean isEnabled=true;
 	
@@ -46,7 +46,7 @@ public class User {
                 ", name='" + name + '\'' +
                 ", role=" + role + 
                 ", active=" + active +
-                ", isLoacked=" + isLoacked +
+                ", isLoacked=" + isLocked +
                 ", isExpired=" + isExpired +
                 ", isEnabled=" + isEnabled +
                 '}';

@@ -22,7 +22,7 @@ public class UserService implements UserDetailsService {
 
 	public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
 		int count = 0;
-		List<User> userFromDb =  userRepository.findByEmail(email);
+		List<User> userFromDb = userRepository.findByEmail(email);
 		if (userFromDb == null || userFromDb.isEmpty() || userFromDb.get(0).getRole() == null
 				|| userFromDb.get(0).getRole().isEmpty()) {
 			throw new CustomException("Invalid Credentials / User is not present in the DB.", HttpStatus.NOT_FOUND);
@@ -33,8 +33,8 @@ public class UserService implements UserDetailsService {
 			authorities[count] = "ROLE_" + role.getRole();
 			count++;
 		}
-		MongoUserDetails userDetails = new MongoUserDetails(user.getEmail(), user.getPassword(), authorities,
-				user.getActive(), user.isLoacked(), user.isExpired(), user.isEnabled());
+		MongoUserDetails userDetails = new MongoUserDetails(user.getUserId(), user.getEmail(), user.getPassword(),
+				authorities, user.getActive(), user.isLocked(), user.isExpired(), user.isEnabled());
 		return userDetails;
 
 	}

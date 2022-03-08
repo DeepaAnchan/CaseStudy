@@ -33,8 +33,8 @@ public class UserService implements UserDetailsService {
 			authorities[count] = "ROLE_" + role.getRole();
 			count++;
 		}
-		MongoUserDetails userDetails = new MongoUserDetails(user.getEmail(), user.getPassword(), authorities,
-				user.getActive(), user.isLoacked(), user.isExpired(), user.isEnabled());
+		MongoUserDetails userDetails = new MongoUserDetails(user.getUserId(), user.getEmail(), user.getPassword(), authorities,
+				user.getActive(), user.isLocked(), user.isExpired(), user.isEnabled());
 		return userDetails;
 
 	}

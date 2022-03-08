@@ -17,6 +17,7 @@ import lombok.Setter;
 @Setter
 public class MongoUserDetails implements UserDetails {
 	private static final long serialVersionUID = 1L;
+	private String userId;  
 	private String username;
     private String password;
     private List<GrantedAuthority> grantedAuthorities;
@@ -25,8 +26,9 @@ public class MongoUserDetails implements UserDetails {
     private boolean isExpired;
     private boolean isEnabled;
 
-    public MongoUserDetails(String username, String password, String [] authorities, 
+    public MongoUserDetails(String userId, String username, String password, String [] authorities, 
     		int active, boolean isLocked, boolean isExpired, boolean isEnabled) {
+    	this.userId = userId;
         this.username = username;
         this.password = password;
         this.grantedAuthorities = AuthorityUtils.createAuthorityList(authorities);
