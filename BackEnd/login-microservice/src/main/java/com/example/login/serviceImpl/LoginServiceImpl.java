@@ -1,5 +1,6 @@
 package com.example.login.serviceImpl;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
@@ -77,6 +78,7 @@ public class LoginServiceImpl implements LoginService {
 									.collect(Collectors.toList()));
 			JwtToken jwtToken = new JwtToken();
 			jwtToken.setToken(token);
+			jwtToken.setCreatedDate(new Date());
 			jwtTokenRepository.save(jwtToken);
 			return new AuthTokenResponse(token, username, user.getUserId());
 

@@ -1,22 +1,20 @@
-package com.example.audit;
+package com.example.product.messageSender;
 
-import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.TimeZone;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.jms.core.JmsTemplate;
 import org.springframework.stereotype.Component;
 
-import com.example.audit.model.MessageModel;
-import com.example.audit.util.LogUtil;
+import com.example.product.model.MessageModel;
+import com.example.product.util.LogUtil;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
  * @author Deepa Anchan
- * This class is meant for testing activemq.
+ * This class is meant for sending message to activemq queue.
  *
  */
 @Component
@@ -34,10 +32,11 @@ public class MessageSender {
 	public void send(String message) {
 		
 		ObjectMapper mapper = new ObjectMapper();
+		
 		MessageModel messageModel = new MessageModel();
 		messageModel.setMessage(message);
 		messageModel.setSentDate(new Date());
-		messageModel.setProducerService("Self");
+		messageModel.setProducerService("Login Service");
 		
 		try {
 			String messageAsJson = mapper.writeValueAsString(messageModel);	

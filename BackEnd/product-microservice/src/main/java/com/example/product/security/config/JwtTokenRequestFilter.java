@@ -1,4 +1,4 @@
-package com.example.login.securityConfig;
+package com.example.product.security.config;
 
 import java.io.IOException;
 
@@ -16,8 +16,8 @@ import org.springframework.security.web.authentication.WebAuthenticationDetailsS
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
-import com.example.login.constants.Constants;
-import com.example.login.exception.CustomException;
+import com.example.product.constants.Constants;
+import com.example.product.exception.CustomException;
 
 /**
  * The JwtTokenRequestFilter extends the Spring Web Filter OncePerRequestFilter class. 
@@ -55,7 +55,7 @@ public class JwtTokenRequestFilter extends OncePerRequestFilter {
 			try {
 				if (!jwtTokenProvider.isTokenPresentInDB(token)) {
 					throw new CustomException("Invalid JWT token", HttpStatus.UNAUTHORIZED);
-
+					
 				}
 				username = jwtTokenProvider.getUsernameFromToken(token);
 				if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
@@ -70,9 +70,10 @@ public class JwtTokenRequestFilter extends OncePerRequestFilter {
 			} catch (Exception e) {
 				throw new CustomException("Invalid JWT token", HttpStatus.UNAUTHORIZED);
 
-			} 
+			}
+
 		}
-		filterChain.doFilter(request, response);
+		filterChain.doFilter(request, response);		
 	}
 
 

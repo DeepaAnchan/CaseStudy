@@ -1,4 +1,4 @@
-package com.example.login.model;
+package com.example.product.security.model;
 
 import java.util.Date;
 
