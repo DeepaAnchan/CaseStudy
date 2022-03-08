@@ -1,5 +1,7 @@
 package com.example.cart.model;
 
+import java.util.List;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -15,5 +17,7 @@ import lombok.Setter;
 @Getter
 public class Cart {
 	@Id
-	private int cartId;
+	private String userEmail;
+	private List<Product> products;
+	private long price;
 }

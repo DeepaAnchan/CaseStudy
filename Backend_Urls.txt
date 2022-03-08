@@ -1,0 +1,24 @@
+
+My Workspace-> CaseStudy
+
+
+POST
+http://localhost:8082/login-server/createUser
+POST
+http://localhost:8082/login-server/logout
+POST
+http://localhost:8082/login-server/login
+GET
+http://localhost:8082/actuator
+
+GET
+http://localhost:8083/product/getAllProducts
+
+POST
+http://localhost:8084/cart-server/saveCart
+GET
+http://localhost:8084/cart-server/getCartById
+PUT
+http://localhost:8084/cart-server/updateCart
+DELETE
+http://localhost:8084/cart-server/deleteCart
