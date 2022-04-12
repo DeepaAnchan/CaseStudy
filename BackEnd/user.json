@@ -1,0 +1,41 @@
+[{
+  "_id": {
+    "$oid": "62277f0762784c46fcddb2b4"
+  },
+  "email": "abc@gmail.com",
+  "password": "$2a$10$Y0QBDsX4RMrwKEJy4F7XTedCMLLIsOm9W3StqGs3swLBsqUN5rWm.",
+  "name": "abc",
+  "role": [
+    {
+      "_id": 1,
+      "role": "ADMIN"
+    },
+    {
+      "_id": 2,
+      "role": "USER"
+    }
+  ],
+  "active": 1,
+  "isLocked": false,
+  "isExpired": false,
+  "isEnabled": true,
+  "_class": "com.example.login.model.User"
+},{
+  "_id": {
+    "$oid": "62469ef88bc8fc6466368cf9"
+  },
+  "email": "def@gmail.com",
+  "password": "$2a$10$n4acvIFy01VxHKOXKmm8uew2C1uf2HCRbfLV.go4tMcf25hfy3V7G",
+  "name": "abc",
+  "role": [
+    {
+      "_id": 1,
+      "role": "USER"
+    }
+  ],
+  "active": 1,
+  "isLocked": false,
+  "isExpired": false,
+  "isEnabled": true,
+  "_class": "com.example.login.model.User"
+}]
