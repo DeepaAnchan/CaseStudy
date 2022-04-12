@@ -1,0 +1,324 @@
+{
+	"info": {
+		"_postman_id": "a080cde5-333f-4111-810f-be6b06766ff2",
+		"name": "CaseStudy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/login-server/createUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"email\": \"abc@gmail.com\",\r\n\t\"password\": \"abc\",\r\n\t\"username\": \"abc\",\r\n\t\"role\": [\r\n\t\t{\r\n\t\t\t\"id\": 1,\r\n\t\t\t\"role\": \"ADMIN\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"id\": 2,\r\n\t\t\t\"role\": \"USER\"\r\n\t\t}\r\n\t]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8082/login-server/createUser",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"login-server",
+						"createUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8082/login-server/createUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"email\": \"abc@gmail.com\",\r\n\t\"password\": \"abc\",\r\n\t\"name\": \"abc\",\r\n\t\"role\": [\r\n\t\t{\r\n\t\t\t\"id\": 1,\r\n\t\t\t\"role\": \"ADMIN\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"id\": 2,\r\n\t\t\t\"role\": \"USER\"\r\n\t\t}\r\n\t]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8082/login-server/createUser",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"login-server",
+						"createUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8082/login-server/logout",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhYmNAZ21haWwuY29tIiwiYXV0aCI6WyJST0xFX1VTRVIiLCJST0xFX0FETUlOIl0sImlhdCI6MTY0NjY4Njg3NSwiZXhwIjoxNjQ2NjkwNDc1fQ.SLMU4bzyo0zqDdSbJvnXFcmRP_1c2Os3YeepEpf8OXk",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8082/login-server/logout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"login-server",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8082/login-server/login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\":\"abc@gmail.com\",\"password\":\"abc\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8082/login-server/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"login-server",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8082/actuator",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/actuator",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"actuator"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8083/product/getAllProducts",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhYmNAZ21haWwuY29tIiwiYXV0aCI6WyJST0xFX1VTRVIiLCJST0xFX0FETUlOIl0sImlhdCI6MTY0Njc0Mzk3MCwiZXhwIjoxNjQ2NzQ3NTcwfQ.05QVbwrmspzxCnAZoh21fBB3-B_RDYTP-To4gRTlaFA",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8083/product/getAllProducts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"product",
+						"getAllProducts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8084/cart-server/saveCart",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhYmNAZ21haWwuY29tIiwiYXV0aCI6WyJST0xFX0FETUlOIiwiUk9MRV9VU0VSIl0sImlhdCI6MTY0Njc2MDk5NywiZXhwIjoxNjQ2NzY0NTk3fQ.VIwIqeViNjrfoigYzmMZ-ie5v1ltw-ebymT0iZ0f8No",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"products\": [\r\n\t\t{\r\n\t\t\t\"id\": 1,\r\n\t\t\t\"productName\": \"Pen\",\r\n\t\t\t\"price\": 10,\r\n\t\t\t\"productDetails\": \"A blue ink pen.\"\r\n\t\t}\r\n\t],\r\n\t\"price\": 10\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8084/cart-server/saveCart",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"cart-server",
+						"saveCart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8084/cart-server/getCartById",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhYmNAZ21haWwuY29tIiwiYXV0aCI6WyJST0xFX0FETUlOIiwiUk9MRV9VU0VSIl0sImlhdCI6MTY0Njc2MDk5NywiZXhwIjoxNjQ2NzY0NTk3fQ.VIwIqeViNjrfoigYzmMZ-ie5v1ltw-ebymT0iZ0f8No",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8084/cart-server/getCartById",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"cart-server",
+						"getCartById"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8084/cart-server/updateCart",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhYmNAZ21haWwuY29tIiwiYXV0aCI6WyJST0xFX0FETUlOIiwiUk9MRV9VU0VSIl0sImlhdCI6MTY0Njc2MDk5NywiZXhwIjoxNjQ2NzY0NTk3fQ.VIwIqeViNjrfoigYzmMZ-ie5v1ltw-ebymT0iZ0f8No",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"products\": [\r\n\t\t{\r\n\t\t\t\"id\": 1,\r\n\t\t\t\"productName\": \"Pen\",\r\n\t\t\t\"price\": 20,\r\n\t\t\t\"productDetails\": \"A blue ink pen.\"\r\n\t\t}\r\n\t],\r\n\t\"price\": 20\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8084/cart-server/updateCart",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"cart-server",
+						"updateCart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8084/cart-server/deleteCart",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhYmNAZ21haWwuY29tIiwiYXV0aCI6WyJST0xFX0FETUlOIiwiUk9MRV9VU0VSIl0sImlhdCI6MTY0Njc2MDk5NywiZXhwIjoxNjQ2NzY0NTk3fQ.VIwIqeViNjrfoigYzmMZ-ie5v1ltw-ebymT0iZ0f8No",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8084/cart-server/deleteCart",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"cart-server",
+						"deleteCart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8085/order-server/placeOrder",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhYmNAZ21haWwuY29tIiwiYXV0aCI6WyJST0xFX0FETUlOIiwiUk9MRV9VU0VSIl0sImlhdCI6MTY0Njc5MjA3OCwiZXhwIjoxNjQ2Nzk1Njc4fQ.1XepUNx5o-tFTyId1rxTK6pBc-gRcx_Mih66LrjABMQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"cart\": {\r\n\t\t\t\t\"products\": [\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\t\"id\": 1,\r\n\t\t\t\t\t\t\"productName\": \"Pen\",\r\n\t\t\t\t\t\t\"price\": 20,\r\n\t\t\t\t\t\t\"productDetails\": \"A blue ink pen.\"\r\n\t\t\t\t\t}\r\n\t\t\t\t],\r\n\t\t\t\t\"price\": 20\r\n\t\t\t},\r\n\t\"orderDate\": \"2022-03-07T13:33:03.969Z\",\r\n\t\"totalPrice\": 22,\r\n\t\"shippingAddress\": \"Mngalore\",\r\n\t\"status\": \"Ordered\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8085/order-server/placeOrder",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"order-server",
+						"placeOrder"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
