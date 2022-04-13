@@ -1,12 +1,32 @@
 https://jwt.io/
 
+ActiveMq: http://localhost:8161/index.html
+
+EUREKA SERVER:
+	http://localhost:8761/
 
 POST
 http://localhost:8082/login-server/createUser
+
+{
+	"email": "def@gmail.com",
+	"password": "def",
+	"name": "abc",
+	"role": [
+		{
+			"id": 1,
+			"role": "USER"
+		}
+	]
+}
+
 POST
 http://localhost:8082/login-server/logout
+
 POST
 http://localhost:8082/login-server/login
+{"username":"abc@gmail.com","password":"abc"}
+
 GET
 http://localhost:8082/actuator
 
@@ -15,9 +35,61 @@ http://localhost:8083/product/getAllProducts
 
 POST
 http://localhost:8084/cart-server/saveCart
+
+{
+    "userEmail": "abc@gmail.com",
+    "products": [
+        {
+            "id": 1,
+            "productName": "Pen",
+            "price": 10,
+            "productDetails": "A blue ink pen."
+        }
+    ],
+    "price": 10
+}
+
 GET
 http://localhost:8084/cart-server/getCartById
+
 PUT
 http://localhost:8084/cart-server/updateCart
+
+{
+	"products": [
+		{
+			"id": 1,
+			"productName": "Pen",
+			"price": 20,
+			"productDetails": "A blue ink pen."
+		}
+	],
+	"price": 20
+}
+
 DELETE
 http://localhost:8084/cart-server/deleteCart
+
+
+POST
+http://localhost:8085/order-server/placeOrder
+{
+	"cart": {
+				"products": [
+					{
+						"id": 1,
+						"productName": "Pen",
+						"price": 20,
+						"productDetails": "A blue ink pen."
+					}
+				],
+				"price": 20
+			},
+	"orderDate": "2022-03-07T13:33:03.969Z",
+	"totalPrice": 22,
+	"shippingAddress": "Mngalore",
+	"status": "Ordered"
+}
+
+GET:
+http://localhost:8085/order-server/getOrder
