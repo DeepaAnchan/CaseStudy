@@ -1,9 +1,6 @@
 https://jwt.io/
 
 
-My Workspace-> CaseStudy
-
-
 POST
 http://localhost:8082/login-server/createUser
 POST
