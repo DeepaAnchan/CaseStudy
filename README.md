@@ -1,7 +1,21 @@
-In this branch the following are added:
-	Spring cloud bus
-	RabbitMq for audit messaging
+Using docker compose:
 
+Mongo DB value shoud be of mongo atlas.
+
+docker build -t deancha12/eureka-naming-server:0.0.1-SNAPSHOT .
+docker build -t deancha12/spring-cloud-config-server:0.0.1-SNAPSHOT .
+docker build -t deancha12/audit-rabbitmq-server:0.0.1-SNAPSHOT .
+docker build -t deancha12/login-server:0.0.1-SNAPSHOT .
+
+docker-compose up
+
+All the url's will be having localhost as HOST. Ex: http://localhost:8082/actuator
+-----------------------------------------------------------------------------------------
+In this branch the following are added:
+	docker is added
+
+
+------------------------------------------------------------------------------------------
 Start RabbitMq for Spring cloud bus usage. 
 	docker run -d --name rabbitmq -p 15672:15672 -p 5672:5672   rabbitmq:3-management-alpine
 	Rabbit Mq:http://localhost:15672/   - guest guest
