@@ -2,9 +2,9 @@ package com.example.order.messageSender;
 
 import java.util.Date;
 
+import org.springframework.amqp.core.Queue;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.jms.core.JmsTemplate;
 import org.springframework.stereotype.Component;
 
 import com.example.order.model.MessageModel;
@@ -14,36 +14,36 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
  * @author Deepa Anchan
- * This class is meant for sending message to activemq queue.
+ * This class is meant for sending message to rabbitMq queue.
  *
  */
 @Component
 public class MessageSender {
 
-	@Autowired
-	private JmsTemplate jmsTemplate;
-	
-	@Value(value = "${message.queue.name}")
-	private String queueName;
-	
+    @Autowired
+    private RabbitTemplate rabbitTemplate;
+    
 	@Autowired
 	private LogUtil logUtil;
-	
-	public void send(String message) {
-		
-		ObjectMapper mapper = new ObjectMapper();
-		
+
+    @Autowired
+    private Queue queue;
+
+    public void send(String message) {
+    	ObjectMapper mapper = new ObjectMapper();
 		MessageModel messageModel = new MessageModel();
 		messageModel.setMessage(message);
 		messageModel.setSentDate(new Date());
-		messageModel.setProducerService("Login Service");
-		
+		messageModel.setProducerService("Order Service");
+
 		try {
-			String messageAsJson = mapper.writeValueAsString(messageModel);	
-			jmsTemplate.convertAndSend(queueName, messageAsJson);		
+			String messageAsJson = mapper.writeValueAsString(messageModel);		
 			logUtil.logInfo("Sending Message:"+messageAsJson);
-		} catch (JsonProcessingException e) {			
+			rabbitTemplate.convertAndSend(this.queue.getName(), messageAsJson);
+		} catch (JsonProcessingException e) {
 			e.printStackTrace();
 		}
-	}
+    }
+
+
 }

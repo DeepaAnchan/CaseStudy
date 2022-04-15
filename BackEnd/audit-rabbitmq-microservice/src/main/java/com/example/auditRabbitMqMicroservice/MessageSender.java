@@ -11,7 +11,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 @Component
-public class QueueSender {
+public class MessageSender {
 
     @Autowired
     private RabbitTemplate rabbitTemplate;

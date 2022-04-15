@@ -9,7 +9,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 
 @Component
-public class QueueConsumer {
+public class MessageConsumer {
 
 	@Autowired
 	private MessageRepository messageRepository;

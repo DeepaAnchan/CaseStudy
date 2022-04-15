@@ -8,7 +8,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 class AuditRabbitmqMicroserviceApplicationTests {
 
 	@Autowired
-	private QueueSender messageSender;
+	private MessageSender messageSender;
 
 	@Test
 	public void testSendAndReceive() {
