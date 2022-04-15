@@ -1,7 +1,6 @@
-Start activeMq 							-p 8161:8161 -p 61616:61616
-	Chech DockerCommands.txt file
-	http://localhost:8161/index.html  - admin & admin	
-	Go to 'Manage my broker' link
+Start RabbitMq for Spring cloud bus usage. 
+	docker run -d --name rabbitmq -p 15672:15672 -p 5672:5672   rabbitmq:3-management-alpine
+	Rabbit Mq:http://localhost:15672/   - guest guest
 	
 Setup the folder for all logs - Then make sure to set the log path in git config folder as well.
 
