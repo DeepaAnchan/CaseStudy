@@ -1,3 +1,7 @@
+In this branch the following are added:
+	Spring cloud bus
+	RabbitMq for audit messaging
+
 Start RabbitMq for Spring cloud bus usage. 
 	docker run -d --name rabbitmq -p 15672:15672 -p 5672:5672   rabbitmq:3-management-alpine
 	Rabbit Mq:http://localhost:15672/   - guest guest
@@ -9,7 +13,7 @@ Make sure MySQL & Mongo DB are setup
 Start all the servers
 	config server		8888
 	EUREKA server		8761
-	audit server		8081
+	audit rabbit server	8081
 	login server		8082
 	product server		8083
 	cart server			8084

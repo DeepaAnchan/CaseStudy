@@ -1,9 +1,13 @@
 https://jwt.io/
 
-ActiveMq: http://localhost:8161/index.html   admin/admin
+Rabbit Mq:
+	http://localhost:15672/   - guest guest
 
 EUREKA SERVER:
 	http://localhost:8761/
+	
+	
+POST: http://localhost:8082/actuator/busrefresh
 
 POST
 http://localhost:8082/login-server/createUser

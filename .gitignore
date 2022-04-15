@@ -2,3 +2,5 @@ git-local-config/
 workspace/
 Documentation/
 BackEnd/ActiveMq/ 
+BackEnd/auditing-microservice/
+
