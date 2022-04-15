@@ -1,6 +1,6 @@
 https://jwt.io/
 
-ActiveMq: http://localhost:8161/index.html
+ActiveMq: http://localhost:8161/index.html   admin/admin
 
 EUREKA SERVER:
 	http://localhost:8761/
