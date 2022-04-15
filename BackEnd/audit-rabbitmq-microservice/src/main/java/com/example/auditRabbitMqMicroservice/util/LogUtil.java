@@ -1,4 +1,4 @@
-package com.example.audit.util;
+package com.example.auditRabbitMqMicroservice.util;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

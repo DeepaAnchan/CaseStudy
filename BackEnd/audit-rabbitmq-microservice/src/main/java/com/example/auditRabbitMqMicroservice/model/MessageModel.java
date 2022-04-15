@@ -1,4 +1,4 @@
-package com.example.audit.model;
+package com.example.auditRabbitMqMicroservice.model;
 
 import java.util.Date;
 
