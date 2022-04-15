@@ -68,7 +68,7 @@
 		    <groupId>org.springframework.cloud</groupId>
 		    <artifactId>spring-cloud-starter-bus-amqp</artifactId>
 		    <version>3.1.0</version>
-		</dependency>
+		</dependency>		
 	</dependencies>
 
 	<build>
