@@ -6,6 +6,7 @@ docker build -t deancha12/eureka-naming-server:0.0.1-SNAPSHOT .
 docker build -t deancha12/spring-cloud-config-server:0.0.1-SNAPSHOT .
 docker build -t deancha12/audit-rabbitmq-server:0.0.1-SNAPSHOT .
 docker build -t deancha12/login-server:0.0.1-SNAPSHOT .
+docker build -t deancha12/product-server:0.0.1-SNAPSHOT .
 
 docker-compose up
 
