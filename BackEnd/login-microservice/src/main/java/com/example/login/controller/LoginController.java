@@ -21,7 +21,6 @@ import com.example.login.model.LoginUser;
 import com.example.login.model.User;
 import com.example.login.securityConfig.JwtTokenProvider;
 import com.example.login.serviceImpl.LoginServiceImpl;
-import com.example.login.util.LogUtil;
 
 
 
@@ -31,9 +30,6 @@ public class LoginController {
 
 	@Autowired
 	private LoginServiceImpl loginServiceImpl;	
-
-	@Autowired
-	private LogUtil logUtil;
 	
 	@Autowired
 	private MessageSender messageSender;	
@@ -43,16 +39,16 @@ public class LoginController {
 	
     @PostMapping("/createUser")
 	public void createUser(@RequestBody User user) {
-    	logUtil.logInfo("LoginController: Creating user");
+    	System.out.println("LoginController: Creating user");
     	User savedUser = loginServiceImpl.saveUser(user);
-    	logUtil.logInfo("LoginController: User:"+savedUser);
+    	System.out.println("LoginController: User:"+savedUser);
 	}
 
     
 	@PostMapping("/login")
 	@ResponseBody
 	public ResponseEntity<AuthTokenResponse> login(@RequestBody LoginUser loginUser) {
-    	logUtil.logInfo("LoginController: Logging In");
+    	System.out.println("LoginController: Logging In");
 		AuthTokenResponse authTokenResponse = loginServiceImpl.login(loginUser.getUsername(), loginUser.getPassword());
 		
 		HttpHeaders headers = new HttpHeaders();
@@ -74,7 +70,7 @@ public class LoginController {
 	@PostMapping("/logout")
     @ResponseBody
 	public ResponseEntity<?> logout(@RequestHeader(value = Constants.AUTHORIZATION) String bearertoken) {
-    	logUtil.logInfo("LoginController: Logging Out");
+    	System.out.println("LoginController: Logging Out");
 		HttpHeaders headers = new HttpHeaders();
 		String token = jwtTokenProvider.resolveToken(bearertoken);
 		if (token!=null && !token.isEmpty() && loginServiceImpl.logout(token)) {

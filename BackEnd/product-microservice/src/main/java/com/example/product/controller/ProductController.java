@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.product.entity.Product;
 import com.example.product.messageSender.MessageSender;
 import com.example.product.serviceImpl.ProductServiceImpl;
-import com.example.product.util.LogUtil;
 
 @RestController
 @RequestMapping(value = "/product")
@@ -21,12 +20,9 @@ public class ProductController {
 	@Autowired
 	private MessageSender messageSender;	
 	
-	@Autowired
-	private LogUtil logUtil;
-	
 	@GetMapping(value = "/getAllProducts")
 	public List<Product> getAllProducts(){
-		logUtil.logInfo("ProductController: Get all products");
+		System.out.println("ProductController: Get all products");
 		//messageSender.send("Got all products");
 		return productServiceImpl.getAllProducts();		
 	}

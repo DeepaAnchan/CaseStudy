@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.example.product.model.MessageModel;
-import com.example.product.util.LogUtil;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -22,9 +21,6 @@ public class MessageSender {
 
     @Autowired
     private RabbitTemplate rabbitTemplate;
-    
-	@Autowired
-	private LogUtil logUtil;
 
     @Autowired
     private Queue queue;
@@ -38,7 +34,7 @@ public class MessageSender {
 
 		try {
 			String messageAsJson = mapper.writeValueAsString(messageModel);		
-			logUtil.logInfo("Sending Message:"+messageAsJson);
+			System.out.println("Sending Message:"+messageAsJson);
 			rabbitTemplate.convertAndSend(this.queue.getName(), messageAsJson);
 		} catch (JsonProcessingException e) {
 			e.printStackTrace();

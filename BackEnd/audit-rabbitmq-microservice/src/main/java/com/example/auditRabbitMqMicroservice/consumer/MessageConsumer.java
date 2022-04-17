@@ -7,16 +7,12 @@ import org.springframework.stereotype.Component;
 
 import com.example.auditRabbitMqMicroservice.model.MessageModel;
 import com.example.auditRabbitMqMicroservice.repository.MessageRepository;
-import com.example.auditRabbitMqMicroservice.util.LogUtil;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 
 
 @Component
 public class MessageConsumer {
-	
-	@Autowired
-	private LogUtil logUtil;
 
 	@Autowired
 	private MessageRepository messageRepository;
@@ -27,7 +23,7 @@ public class MessageConsumer {
 		try {
 			MessageModel messageModel = mapper.readValue(message, MessageModel.class);
 			messageRepository.save(messageModel);
-			logUtil.logInfo("Message Received:"+messageModel);
+			System.out.println("Message Received:"+messageModel);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
