@@ -1,12 +1,15 @@
 Using docker compose:
 
 Mongo DB value shoud be of mongo atlas.
+MySQL should be of clever cloud.
 
 docker build -t deancha12/eureka-naming-server:0.0.1-SNAPSHOT .
 docker build -t deancha12/spring-cloud-config-server:0.0.1-SNAPSHOT .
 docker build -t deancha12/audit-rabbitmq-server:0.0.1-SNAPSHOT .
 docker build -t deancha12/login-server:0.0.1-SNAPSHOT .
 docker build -t deancha12/product-server:0.0.1-SNAPSHOT .
+docker build -t deancha12/cart-server:0.0.1-SNAPSHOT .
+docker build -t deancha12/order-server:0.0.1-SNAPSHOT .
 
 docker-compose up
 
