@@ -81,6 +81,40 @@ services:
       SPRING_APPLICATION_JSON: '{"eureka":{"client":{"serviceUrl":{"defaultZone":"http://eureka-naming-server:8761/eureka"}}}}'
       SPRING_RABBITMQ_HOST: rabbitmq
       SPRING_CLOUD_CONFIG_URI: http://spring-cloud-config-server:8888
+      
+  cart-server:
+    image: deancha12/cart-server:0.0.1-SNAPSHOT
+    mem_limit: 700m
+    ports:
+      - "8084:8084"
+    networks:
+      - grocery-network
+    restart: on-failure
+    depends_on:
+      - rabbitmq
+      - spring-cloud-config-server
+      - eureka-naming-server
+    environment:
+      SPRING_APPLICATION_JSON: '{"eureka":{"client":{"serviceUrl":{"defaultZone":"http://eureka-naming-server:8761/eureka"}}}}'
+      SPRING_RABBITMQ_HOST: rabbitmq
+      SPRING_CLOUD_CONFIG_URI: http://spring-cloud-config-server:8888
+      
+  order-server:
+    image: deancha12/order-server:0.0.1-SNAPSHOT
+    mem_limit: 700m
+    ports:
+      - "8085:8085"
+    networks:
+      - grocery-network
+    restart: on-failure
+    depends_on:
+      - rabbitmq
+      - spring-cloud-config-server
+      - eureka-naming-server
+    environment:
+      SPRING_APPLICATION_JSON: '{"eureka":{"client":{"serviceUrl":{"defaultZone":"http://eureka-naming-server:8761/eureka"}}}}'
+      SPRING_RABBITMQ_HOST: rabbitmq
+      SPRING_CLOUD_CONFIG_URI: http://spring-cloud-config-server:8888
 
 networks:
     grocery-network:
