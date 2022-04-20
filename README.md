@@ -16,7 +16,7 @@ docker-compose up
 All the url's will be having localhost as HOST. Ex: http://localhost:8082/actuator
 -----------------------------------------------------------------------------------------
 In this branch the following are added:
-	docker is added
+	Removed logback properties - Beacuse was not able to file log file in container - Need to check on this.
 
 
 ------------------------------------------------------------------------------------------
